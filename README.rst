@@ -17,30 +17,30 @@ this. It delivers data-compatible plugins for straightforward upgrade.
 Some field has been deprecated as no longer used by the twitter widgets. They
 have been left for easier upgrade.
 
-Upgrade from the in-core plugin
--------------------------------
+Installation
+------------
 
 First-time installation
 #######################
 
-1. Add ``djangocms_twitter`` to ``INSTALLED_APPS``
-1. Apply migrations::
+#. Add ``djangocms_twitter`` to ``INSTALLED_APPS``
+#. Apply migrations::
 
     $ python manage.py migrate djangocms_twitter
 
-1. Insert the plugins in the page and configure them as stated in Usage_.
+#. Insert the plugins in the page and configure them as stated in Usage_.
 
-Upgrade from native twitter plugin
-##################################
+Upgrade from the in-core plugin
+###############################
 
-1. Remove ``cms.plugins.twitter`` from ``INSTALLED_APPS``
-1. Add ``djangocms_twitter`` to ``INSTALLED_APPS``
-1. Apply migrations::
+#. Remove ``cms.plugins.twitter`` from ``INSTALLED_APPS``
+#. Add ``djangocms_twitter`` to ``INSTALLED_APPS``
+#. Apply migrations::
 
     $ python manage.py migrate djangocms_twitter
 
-1. Modify the plugins instances according to Usage_.
-1. Check your Templates_.
+#. Modify the plugins instances according to Usage_.
+#. Check your Templates_.
 
 .. _Usage:
 
@@ -58,13 +58,13 @@ as *templates* for this django CMS plugin:
 Create the twitter-side widget
 ##############################
 
-1. Login in your twitter account;
-1. Go to https://twitter.com/settings/widgets;
-1. Create new widget;
-1. Select "**user timeline**" as source;
-1. Configure the options (theme, colours etc) as described in https://dev.twitter.com/docs/embedded-timelines;
-1. Create widget;
-1. get the value of ``data-widget-id`` in the embed code;
+#. Login in your twitter account;
+#. Go to https://twitter.com/settings/widgets;
+#. Create new widget;
+#. Select "**user timeline**" as source;
+#. Configure the options (theme, colours etc) as described in https://dev.twitter.com/docs/embedded-timelines;
+#. Create widget;
+#. get the value of ``data-widget-id`` in the embed code;
 
 #####################
 Plugin instances data
@@ -74,10 +74,10 @@ Plugin instances data
 plugin-provided user timeline will be shown, while the twitter widget graphics
 appearance will be used.
 
-1. Add or edit the **Twitter** plugin in you placeholders;
-1. Fill in the Twitter widget it field using the ``data-widget-id`` value from
-the previous step;
-1. Save the plugin;
+#. Add or edit the **Twitter** plugin in you placeholders;
+#. Fill in the Twitter widget it field using the ``data-widget-id`` value from
+   the previous step;
+#. Save the plugin;
 
 
 TwitterSearchPlugin
@@ -90,26 +90,26 @@ website.
 Create the twitter-side widget
 ##############################
 
-1. Login in your twitter account;
-1. Go to https://twitter.com/settings/widgets;
-1. Create new widget;
-1. Select "**Search**" as source;
-1. Configure the search query;
-1. Configure the options (theme, colours etc) as described in https://dev.twitter.com/docs/embedded-timelines;
-1. Create widget;
-1. get the value of ``data-widget-id`` in the embed code;
+#. Login in your twitter account;
+#. Go to https://twitter.com/settings/widgets;
+#. Create new widget;
+#. Select "**Search**" as source;
+#. Configure the search query;
+#. Configure the options (theme, colours etc) as described in https://dev.twitter.com/docs/embedded-timelines;
+#. Create widget;
+#. get the value of ``data-widget-id`` in the embed code;
 
 #####################
 Plugin instances data
 #####################
 
-1. Add or edit the **Twitter Search** plugin in you placeholders;
-1. Fill in the Twitter widget it field using the ``data-widget-id`` value from
-the previous step;
-1. Optionally fill-in the query field in the plugin form; this is only used for
-non-javascript enabled browser, as the ``data-widget-id`` will take over on
-javascript-enabled ones;
-1. Save the plugin;
+#. Add or edit the **Twitter Search** plugin in you placeholders;
+#. Fill in the Twitter widget it field using the ``data-widget-id`` value from
+   the previous step;
+#. Optionally fill-in the query field in the plugin form; this is only used for
+   non-javascript enabled browser, as the ``data-widget-id`` will take over on
+   javascript-enabled ones;
+#. Save the plugin;
 
 
 .. _Templates:
@@ -125,5 +125,5 @@ https://dev.twitter.com/docs/embedded-timelines#options for further info.
 
 To apply them you need to modify the plugin templates:
 
-# ``cms/plugins/twitter_timeline.html``: for ``TwitterRecentEntriesPlugin``
-# ``cms/plugins/twitter_search_widget.html``: for ``TwitterSearchPlugin``
+- ``cms/plugins/twitter_timeline.html``: for ``TwitterRecentEntriesPlugin``
+- ``cms/plugins/twitter_search_widget.html``: for ``TwitterSearchPlugin``
