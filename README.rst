@@ -1,0 +1,129 @@
+django CMS Twitter plugin
+=========================
+
+``djangocms-twitter`` is a upgrade-friendly plugin, mostly derived from original
+implementation in **django CMS** core.
+
+Due to the switch from v 1.0 to v 1.1 in the twitter API, the original plugin no
+longer works, and it's going to be removed.
+
+Other plugin exists (or you could just switch to plain twitter widgets), althogh,
+it's still a bit frustrating to throw away existing plugins.
+
+Contrary to the 1.0 API, Twitter 1.1 API requires you to create client side
+plugins in your profile and ``djangocms-twitter`` can do very little to avoid
+this. It delivers data-compatible plugins for straightforward upgrade.
+
+Some field has been deprecated as no longer used by the twitter widgets. They
+have been left for easier upgrade.
+
+Upgrade from the in-core plugin
+-------------------------------
+
+First-time installation
+#######################
+
+1. Add ``djangocms_twitter`` to ``INSTALLED_APPS``
+1. Apply migrations::
+
+    $ python manage.py migrate djangocms_twitter
+
+1. Insert the plugins in the page and configure them as stated in Usage_.
+
+Upgrade from native twitter plugin
+##################################
+
+1. Remove ``cms.plugins.twitter`` from ``INSTALLED_APPS``
+1. Add ``djangocms_twitter`` to ``INSTALLED_APPS``
+1. Apply migrations::
+
+    $ python manage.py migrate djangocms_twitter
+
+1. Modify the plugins instances according to Usage_.
+1. Check your Templates_.
+
+.. _Usage:
+
+Usage
+-----
+
+TwitterRecentEntriesPlugin
+##########################
+
+For this plugin it's not necessary to create a widget for every plugin in your
+website; you could just consider the widget you create on the Twitter website
+as *templates* for this django CMS plugin:
+
+##############################
+Create the twitter-side widget
+##############################
+
+1. Login in your twitter account;
+1. Go to https://twitter.com/settings/widgets;
+1. Create new widget;
+1. Select "**user timeline**" as source;
+1. Configure the options (theme, colours etc) as described in https://dev.twitter.com/docs/embedded-timelines;
+1. Create widget;
+1. get the value of ``data-widget-id`` in the embed code;
+
+#####################
+Plugin instances data
+#####################
+
+``data-widget-id`` value can be shared by any number of plugins instances, the
+plugin-provided user timeline will be shown, while the twitter widget graphics
+appearance will be used.
+
+1. Add or edit the **Twitter** plugin in you placeholders;
+1. Fill in the Twitter widget it field using the ``data-widget-id`` value from
+the previous step;
+1. Save the plugin;
+
+
+TwitterSearchPlugin
+###################
+
+The twitter widget used by this plugin is entirely configured on the twitter
+website.
+
+##############################
+Create the twitter-side widget
+##############################
+
+1. Login in your twitter account;
+1. Go to https://twitter.com/settings/widgets;
+1. Create new widget;
+1. Select "**Search**" as source;
+1. Configure the search query;
+1. Configure the options (theme, colours etc) as described in https://dev.twitter.com/docs/embedded-timelines;
+1. Create widget;
+1. get the value of ``data-widget-id`` in the embed code;
+
+#####################
+Plugin instances data
+#####################
+
+1. Add or edit the **Twitter Search** plugin in you placeholders;
+1. Fill in the Twitter widget it field using the ``data-widget-id`` value from
+the previous step;
+1. Optionally fill-in the query field in the plugin form; this is only used for
+non-javascript enabled browser, as the ``data-widget-id`` will take over on
+javascript-enabled ones;
+1. Save the plugin;
+
+
+.. _Templates:
+
+Templates
+---------
+
+Older templates it's no longer valid. Most of the graphic configuration must be
+done in when creating the widget on the Twitter website.
+
+A limited set of client-side options exists to configure the widgets; see
+https://dev.twitter.com/docs/embedded-timelines#options for further info.
+
+To apply them you need to modify the plugin templates:
+
+# ``cms/plugins/twitter_timeline.html``: for ``TwitterRecentEntriesPlugin``
+# ``cms/plugins/twitter_search_widget.html``: for ``TwitterSearchPlugin``
