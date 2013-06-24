@@ -1,0 +1,2 @@
+include README.rst LICENCE.txt
+recursive-include djangocms_twitter *.py *.html manifest

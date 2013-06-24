@@ -16,9 +16,6 @@ class TwitterRecentEntries(CMSPlugin):
     def __unicode__(self):
         return self.title
 
-    class Meta:
-        db_table = "cmsplugin_twitterrecententries"
-
 
 class TwitterSearch(CMSPlugin):
     title = models.CharField(_('title'), max_length=75, blank=True)
@@ -31,6 +28,3 @@ class TwitterSearch(CMSPlugin):
 
     def __unicode__(self):
         return self.title
-
-    class Meta:
-        db_table = "cmsplugin_twittersearch"
