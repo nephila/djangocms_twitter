@@ -25,7 +25,7 @@ setup(
     description='Twitter plugin for django CMS',
     author='Nephila s.a.s.',
     author_email='web@nephila.it',
-    url='https://github.com/nephila/djangocms-twitter',
+    url='https://github.com/nephila/djangocms-plugin-twitter',
     packages=['djangocms_twitter', 'djangocms_twitter.migrations'],
     install_requires=[
         'django-cms'
