@@ -1,6 +1,15 @@
 django CMS Twitter plugin
 =========================
 
+
+.. image:: https://badge.fury.io/py/djangocms-twitter.png
+    :target: http://badge.fury.io/py/djangocms-twitter
+
+.. image:: https://pypip.in/d/djangocms-twitter/badge.png
+        :target: https://crate.io/packages/djangocms-twitter?version=latest
+
+
+
 ``djangocms-twitter`` is a upgrade-friendly plugin, mostly derived from original
 implementation in **django CMS** core.
 
