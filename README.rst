@@ -136,3 +136,8 @@ To apply them you need to modify the plugin templates:
 
 - ``cms/plugins/twitter_timeline.html``: for ``TwitterRecentEntriesPlugin``
 - ``cms/plugins/twitter_search_widget.html``: for ``TwitterSearchPlugin``
+
+.. image:: https://d2weczhvl823v0.cloudfront.net/nephila/djangocms_twitter/trend.png
+   :alt: Bitdeli badge
+   :target: https://bitdeli.com/free
+
