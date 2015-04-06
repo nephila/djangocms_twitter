@@ -5,7 +5,7 @@ from djangocms_twitter import __version__
 
 
 CLASSIFIERS = [
-    'Development Status :: 2 - Beta',
+    'Development Status :: 4 - Beta',
     'Environment :: Web Environment',
     'Framework :: Django',
     'Intended Audience :: Developers',
@@ -28,7 +28,7 @@ setup(
     url='https://github.com/nephila/djangocms_twitter',
     packages=['djangocms_twitter', 'djangocms_twitter.migrations'],
     install_requires=[
-        'django-cms'
+        'django-cms>=3.0'
     ],
     license='LICENSE.txt',
     platforms=['OS Independent'],
