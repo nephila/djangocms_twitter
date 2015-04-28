@@ -13,15 +13,17 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
 
         if LooseVersion(cms.__version__) >= LooseVersion('3'):
-            db.rename_table(u'cmsplugin_twittersearch', u'djangocms_twitter_twittersearch')
-            db.rename_table(u'cmsplugin_twitterrecententries', u'djangocms_twitter_twitterrecententries')
+            if 'cmsplugin_twittersearch' in db.connection.introspection.table_names():
+                db.rename_table(u'cmsplugin_twittersearch', u'djangocms_twitter_twittersearch')
+                db.rename_table(u'cmsplugin_twitterrecententries', u'djangocms_twitter_twitterrecententries')
 
 
     def backwards(self, orm):
 
         if LooseVersion(cms.__version__) >= LooseVersion('3'):
-            db.rename_table(u'djangocms_twitter_twittersearch', u'cmsplugin_twittersearch')
-            db.rename_table(u'djangocms_twitter_twitterrecententries', u'cmsplugin_twitterrecententries')
+            if 'djangocms_twitter_twittersearch' in db.connection.introspection.table_names():
+                db.rename_table(u'djangocms_twitter_twittersearch', u'cmsplugin_twittersearch')
+                db.rename_table(u'djangocms_twitter_twitterrecententries', u'cmsplugin_twitterrecententries')
 
     models = {
         'cms.cmsplugin': {
