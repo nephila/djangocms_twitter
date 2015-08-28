@@ -11,7 +11,7 @@ class TwitterRecentEntries(CMSPlugin):
     link_hint = models.CharField(_('link hint'), max_length=75, blank=True,
                                  help_text=_('Deprecated: no longer used by Twitter widgets.'))
     twitter_id = models.CharField(_('twitter id'), max_length=75,
-                                 help_text=_(u'See https://twitter.com/widgets on how to obtain one'))
+                                 help_text=_(u'See https://twitter.com/settings/widgets on how to obtain one'))
 
     def __unicode__(self):
         return self.title
@@ -24,7 +24,7 @@ class TwitterSearch(CMSPlugin):
     count = models.PositiveSmallIntegerField(_('count'), default=3,
                                              help_text=_('Number of entries to display'))
     twitter_id = models.CharField(_('twitter id'), max_length=75,
-                                 help_text=_(u'See https://twitter.com/widgets on how to obtain one'))
+                                 help_text=_(u'See https://twitter.com/settings/widgets on how to obtain one'))
 
     def __unicode__(self):
         return self.title
